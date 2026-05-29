@@ -12,6 +12,12 @@ connectDB();
 //  /api/v1/auth
 app.use('/api/v1/auth', authRouter);
 
+// Isko app.use('/api/v1/auth', authRouter); ke theek upar ya neeche daal de
+app.get('/', (req, res) => {
+    res.status(200).send(" Backend API is running successfully!");
+});
+
+
 //  Discord command se service ban banane ke liye POST API
 app.post('/api/v1/services', async (req, res) => {
     try {
