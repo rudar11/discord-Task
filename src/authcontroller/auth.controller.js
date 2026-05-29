@@ -39,7 +39,7 @@ async function loginUser(req, res) {
     res.status(200).json({ message: "user logged in successfully", user: { name: user.name, email: user.email}, token });
 }
 
-// NAYA FUNCTION: Discord bot ke /ppgetuser ke liye
+//  FUNCTION: Discord bot  /ppgetuser use
 async function getUserByEmail(req, res) {
     const { email } = req.params;
     const user = await usermodel.findOne({ where: { email } });

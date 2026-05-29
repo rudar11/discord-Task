@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-// MySQL se connect karne ke liye Sequelize ka instance bana rahe hain
+// MySQL  connect  Sequelize  instance 
 const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,

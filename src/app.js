@@ -9,9 +9,18 @@ app.use(cookieparser());
 app.use(express.json());
 connectDB();
 
-
 //  /api/v1/auth
 app.use('/api/v1/auth', authRouter);
 
+//  Discord command se service ban banane ke liye POST API
+app.post('/api/v1/services', async (req, res) => {
+    try {
+        const { name, price } = req.body;
+        const service = await Service.create({ name, price });
+        res.status(201).json({ message: "service created", service });
+    } catch (error) {
+        res.status(500).json({ message: "error creating service", error });
+    }
+});
 
 module.exports = app;

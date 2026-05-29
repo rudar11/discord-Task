@@ -6,5 +6,7 @@ const router = express.Router();
 router.post('/signup' , authController.registerUser);
 router.post('/login' , authController.loginUser);
 
+// Discord bot GET endpoint
+router.get('/user/:email', authController.getUserByEmail);
 
 module.exports = router;
